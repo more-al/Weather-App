@@ -4,10 +4,12 @@ My project is a weather app that uses the Dark Sky API to pull live weather info
 
 <h2>Application Design</h2> 
 
-<hr>
+<a href='./Docs/Main Page.jpg'>Main website page.</a>
+<a href='./Docs/Multiple Cities.jpg'>Multiple Cities Page</a>
+<a href='./Docs/Drop Down.jpg'>Drop Down Menu</a>
 
-<a href='./Docs/Main Page.HEIC'>Main website page.</a>
-                                                <a href='./Docs/Multiple Cities.HEIC'>Multiple Cities Page</a>
-                                                <a href='./Docs/Drop Down.HEIC'>Drop Down Menu</a>
+<h2>My Project Definition</h2>
+
+<a href='./Docs/Drop Down.jpg'>Drop Down Menu</a>
 
 <h2>Trello link</h2> https://trello.com/b/GoIAPAkV/capstone-project
