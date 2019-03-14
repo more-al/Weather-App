@@ -10,6 +10,6 @@ My project is a weather app that uses the Dark Sky API to pull live weather info
 
 <h2>My Project Definition</h2>
 
-<a href='./Docs/Drop Down.jpg'>Drop Down Menu</a>
+<a href='./Docs/Al Harvey - Capstone Project Planning.docx'>Drop Down Menu</a>
 
 <h2>Trello link</h2> https://trello.com/b/GoIAPAkV/capstone-project
