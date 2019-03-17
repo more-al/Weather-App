@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { get } from 'https';
 
 window.addEventListener('load', () => {
     var longitude;
@@ -24,6 +23,8 @@ window.addEventListener('load', () => {
                     // Set DOM Elemnts from the API
 
                     tempratureDegree.textContent = temperature;
+                    tempratureDescription.textContent = summary;
+                    locationTimezone.textContent = data.timezone;
                 });
         });
     }
