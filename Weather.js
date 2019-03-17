@@ -1,5 +1,3 @@
-
-
 window.addEventListener('load', () => {
     let longitude;
     let latitude;
@@ -21,7 +19,7 @@ window.addEventListener('load', () => {
                 .then((response) => response.json())
                 .then((data) => {
                     console.log(data);
-                    const { temperature, summary } = data.curently;
+                    const { temperature, summary } = data.currently;
                     // Set DOM Elemnts from the API
 
                     tempratureDegree.textContent = temperature;
