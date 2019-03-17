@@ -16,6 +16,9 @@ window.addEventListener('load', () => {
                 .then((response) => response.json())
                 .then((data) => {
                     const { temperature, summary   } = data.currently;
+                    // Set DOM Elemnts from the API
+
+                    tempratureDegree.textContent = temperature;
                 });
         });
     }
