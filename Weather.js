@@ -1,11 +1,11 @@
-import axios from 'axios';
+
 
 window.addEventListener('load', () => {
-    var longitude;
-    var latitude;
-    var tempratureDescription = document.querySelector('.temperature-description');
-    var tempratureDegree = document.querySelector('.temperature-degree');
-    var locationTimezone = document.querySelector('.location-timezone');
+    let longitude;
+    let latitude;
+    let tempratureDescription = document.querySelector('.temperature-description');
+    let tempratureDegree = document.querySelector('.temperature-degree');
+    let locationTimezone = document.querySelector('.location-timezone');
 
 
     if(navigator.geolocation){
@@ -13,16 +13,17 @@ window.addEventListener('load', () => {
             longitude = position.coords.longitude;
             latitude = position.coords.latitude;
 
-            const darkSky = `https://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=a6a56da06c4a778a16e072cafcec86ff/${latitude},${longitude}`;
+            const proxy = 'https://cors-anywhere.herokuapp.com/';
+            const darkSky = `${proxy}https://api.darksky.net/forecast/0352f8310ea90b32364e0064ecc11103/${latitude},${longitude}`;
 
-            axios;
+
             fetch(darkSky)
                 .then((response) => response.json())
                 .then((data) => {
                     console.log(data);
                     const { temperature, summary } = data.curently;
-
                     // Set DOM Elemnts from the API
+
                     tempratureDegree.textContent = temperature;
                     tempratureDescription.textContent = summary;
                     locationTimezone.textContent = data.timezone;
