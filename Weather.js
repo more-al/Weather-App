@@ -12,6 +12,8 @@ if(navigator.geolocation){
 
         const proxy = 'https://cors-anywhere.herokuapp.com/';
         const darkSky = `${proxy}https://api.darksky.net/forecast/0352f8310ea90b32364e0064ecc11103/${latitude},${longitude}`;
+        const temperatureSection = document.querySelector('.temperature');
+        const temperatureSpan = document.querySelector('.temperature span');
 
 
         fetch(darkSky)
@@ -26,6 +28,16 @@ if(navigator.geolocation){
                 locationTimezone.textContent = data.timezone;
                 // Set Icon from Skycons
                 setIcons(icon, document.querySelector('.icon'));
+
+                // Change temperature to Farenheit/Celsius
+                temperatureSection.addEventListener('click', () => {
+                    if(temperatureSpan.textContent === 'F'){
+                        temperatureSpan.textContent = 'C';
+                    }
+                    else{
+                        temperatureSpan.textContent = 'F';
+                    }
+                });
             });
     });
 }
