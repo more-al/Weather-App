@@ -12,8 +12,8 @@ if(navigator.geolocation){
 
         const proxy = 'https://cors-anywhere.herokuapp.com/';
         const darkSky = `${proxy}https://api.darksky.net/forecast/0352f8310ea90b32364e0064ecc11103/${latitude},${longitude}`;
-        const temperatureSection = document.querySelector('.temperature');
-        const temperatureSpan = document.querySelector('.temperature span');
+        const temperatureSection = document.querySelector('.temperature-section');
+        const temperatureSpan = document.querySelector('.temperature-section span');
 
 
         fetch(darkSky)
@@ -23,9 +23,12 @@ if(navigator.geolocation){
                 const { temperature, summary, icon } = data.currently;
                 // Set DOM Elemnts from the API
 
-                tempratureDegree.textContent = temperature;
+                tempratureDegree.textContent = Math.floor(temperature);
                 tempratureDescription.textContent = summary;
                 locationTimezone.textContent = data.timezone;
+                // Get Celsius
+                const celsius = (temperature - 32) * (5 / 9);
+
                 // Set Icon from Skycons
                 setIcons(icon, document.querySelector('.icon'));
 
@@ -33,9 +36,11 @@ if(navigator.geolocation){
                 temperatureSection.addEventListener('click', () => {
                     if(temperatureSpan.textContent === 'F'){
                         temperatureSpan.textContent = 'C';
+                        tempratureDegree.textContent = Math.floor(celsius);
                     }
                     else{
                         temperatureSpan.textContent = 'F';
+                        tempratureDegree.textContent = Math.floor(temperature);
                     }
                 });
             });
