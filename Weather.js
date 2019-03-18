@@ -18,12 +18,22 @@ if(navigator.geolocation){
             .then((response) => response.json())
             .then((data) => {
                 console.log(data);
-                const { temperature, summary } = data.currently;
+                const { temperature, summary, icon } = data.currently;
                 // Set DOM Elemnts from the API
 
                 tempratureDegree.textContent = temperature;
                 tempratureDescription.textContent = summary;
                 locationTimezone.textContent = data.timezone;
+                // Set Icon from Skycons
+                setIcons(icon, document.querySelector('.icon'));
             });
     });
+}
+function setIcons(icon, iconID){
+    const skycons = new Skycons({ 'color': 'purple' });
+    const currentIcon = icon.replace(/-/g, '_').toUpperCase();
+
+    skycons.play();
+
+    return skycons.set(iconID, Skycons[currentIcon]);
 }
