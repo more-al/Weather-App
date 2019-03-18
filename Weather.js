@@ -30,7 +30,7 @@ if(navigator.geolocation){
     });
 }
 function setIcons(icon, iconID){
-    const skycons = new Skycons({ 'color': 'purple' });
+    const skycons = new Skycons({ 'color': 'black' });
     const currentIcon = icon.replace(/-/g, '_').toUpperCase();
 
     skycons.play();
