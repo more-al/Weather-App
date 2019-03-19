@@ -33,7 +33,7 @@ body {
     cursor: pointer;
 }
 
-.degree-section span {
+.degree-section p {
     margin: 10px;
     font-size: 30px;
 }

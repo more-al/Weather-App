@@ -13,7 +13,7 @@ if(navigator.geolocation){
         const proxy = 'https://cors-anywhere.herokuapp.com/';
         const darkSky = `${proxy}https://api.darksky.net/forecast/0352f8310ea90b32364e0064ecc11103/${latitude},${longitude}`;
         const temperatureSection = document.querySelector('.temperature-section');
-        const temperatureSpan = document.querySelector('.temperature-section span');
+        const temperatureSpan = document.querySelector('.temperature-section p');
 
 
         fetch(darkSky)
