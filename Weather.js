@@ -26,13 +26,14 @@ if(navigator.geolocation){
                 tempratureDegree.textContent = Math.floor(temperature);
                 tempratureDescription.textContent = summary;
                 locationTimezone.textContent = data.timezone;
+
                 // Get Celsius
                 const celsius = (temperature - 32) * (5 / 9);
 
                 // Set Icon from Skycons
                 setIcons(icon, document.querySelector('.icon'));
 
-                // Change temperature to Farenheit/Celsius
+                // Change temperature back and forth from Farenheit/Celsius
                 temperatureSection.addEventListener('click', () => {
                     if(temperatureSpan.textContent === 'F'){
                         temperatureSpan.textContent = 'C';
@@ -54,3 +55,4 @@ function setIcons(icon, iconID){
 
     return skycons.set(iconID, Skycons[currentIcon]);
 }
+
