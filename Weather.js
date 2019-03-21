@@ -11,6 +11,7 @@ if(navigator.geolocation){
         latitude = position.coords.latitude;
 
         const proxy = 'https://cors-anywhere.herokuapp.com/';
+        // const cityName `http://api.geonames.org/findNearestIntersection?lat=${latitude}&lng=${longitude}&username=alharvey789`
         const darkSky = `${proxy}https://api.darksky.net/forecast/0352f8310ea90b32364e0064ecc11103/${latitude},${longitude}`;
         const temperatureSection = document.querySelector('.temperature-section');
         const temperatureSpan = document.querySelector('.temperature-section p');
@@ -47,6 +48,7 @@ if(navigator.geolocation){
             });
     });
 }
+
 function setIcons(icon, iconID){
     const skycons = new Skycons({ 'color': 'white' });
     const currentIcon = icon.replace(/-/g, '_').toUpperCase();

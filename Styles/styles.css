@@ -33,7 +33,18 @@ body {
     cursor: pointer;
 }
 
+.degree-section-multiple {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
 .degree-section p {
+    margin: 10px;
+    font-size: 30px;
+}
+
+.degree-section-multiple p {
     margin: 10px;
     font-size: 30px;
 }
@@ -41,3 +52,7 @@ body {
 .degree-section h2 {
     font-size: 40px;
 }
+
+/* .degree-section-multiple h2 {
+    font-size: 40px;
+} */
