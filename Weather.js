@@ -19,7 +19,7 @@ if(navigator.geolocation){
         latitude = position.coords.latitude;
 
         const proxy = 'https://cors-anywhere.herokuapp.com/';
-        const cityName = `${proxy}http://api.geonames.org/findNearestIntersectionJSON?lat=${latitude}&lng=${longitude}&username=alharvey789`;
+        const cityName = `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=cccebd7bb94a46b8a94f1804d990dce5`;
         
         
         const darkSky = `${proxy}https://api.darksky.net/forecast/0352f8310ea90b32364e0064ecc11103/${latitude},${longitude}`;
@@ -50,7 +50,7 @@ if(navigator.geolocation){
                         console.log('hello');
                         console.log(data3);
 
-                        locationTimezone.textContent = data3.intersection.placename;
+                        locationTimezone.textContent = data3.name;
                     });
 
 
