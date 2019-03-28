@@ -15,6 +15,11 @@ body {
     color: white;
 }
 
+.hourly-temp {
+    display: flex;
+    align-items: center;
+}
+
 .location, .temperature {
     height: 30vh;
     width: 50%;
@@ -27,13 +32,12 @@ body {
     flex-direction: column;
 }
 
-.degree-section {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
+.daily {
+    border: red solid 1px;
+    display: inline;
 }
 
-.degree-section-multiple {
+.degree-section {
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -44,15 +48,6 @@ body {
     font-size: 30px;
 }
 
-.degree-section-multiple p {
-    margin: 10px;
-    font-size: 30px;
-}
-
 .degree-section h2 {
     font-size: 40px;
 }
-
-/* .degree-section-multiple h2 {
-    font-size: 40px;
-} */

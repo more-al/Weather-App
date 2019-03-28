@@ -20,23 +20,31 @@ if(navigator.geolocation){
 
         const proxy = 'https://cors-anywhere.herokuapp.com/';
         const cityName = `${proxy}http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=cccebd7bb94a46b8a94f1804d990dce5`;
-        
-        
+
+
         const darkSky = `${proxy}https://api.darksky.net/forecast/0352f8310ea90b32364e0064ecc11103/${latitude},${longitude}`;
         const temperatureSection = document.querySelector('.temperature-section');
         const temperatureSpan = document.querySelector('.temperature-section p');
+        const hourlytemp = document.querySelector('.hourly-temp');
+        const hourlytime = document.querySelector('.hourly-time');
 
 
         fetch(darkSky)
             .then((response) => response.json())
-            .then((data) => {
-                console.log(data);
-                const { temperature, summary, icon } = data.currently;
-                // Set DOM Elemnts from the API
+            .then((weather) => {
+                console.log(weather);
+                const { temperature, summary, icon } = weather.currently;
 
+                // Set DOM Elemnts from the API
                 tempratureDegree.textContent = Math.floor(temperature);
                 tempratureDescription.textContent = summary;
-                // locationTimezone.textContent = data.timezone;
+
+                for(const daily of weather.hourly.data){
+                    const timeString = moment.unix(daily.time).format('LT');
+                    
+                    console.log(daily);
+                    hourlytemp.innerHTML += `<div class='daily'> <p><h3>${timeString}</h3><h1>${Math.floor(daily.temperature)}</h1></p> </div>`;
+                }
 
                 // Get Celsius
                 const celsius = (temperature - 32) * (5 / 9);
