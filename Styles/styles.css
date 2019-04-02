@@ -17,7 +17,10 @@ body {
 
 .hourly-temp {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    margin: 2px;
+    text-align: center;
+    min-width: 4.5em;
 }
 
 .location, .temperature {
@@ -35,7 +38,7 @@ body {
 .daily {
     display: flex;
     flex-direction: column-reverse;
-    flex-wrap: wrap-reverse;
+    flex-wrap: wrap;
     margin: 2px;
     text-align: center;
     min-width: 4.5em;
