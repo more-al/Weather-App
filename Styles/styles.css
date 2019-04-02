@@ -18,7 +18,7 @@ body {
 .hourly-temp {
     display: flex;
     flex-wrap: wrap;
-    margin: 2px;
+    margin: 27px;
     text-align: center;
     min-width: 4.5em;
 }

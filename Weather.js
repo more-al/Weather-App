@@ -39,7 +39,7 @@ if(navigator.geolocation){
                 tempratureDescription.textContent = summary;
 
                 // for(const daily of weather.hourly.data){
-                for(let i = 1; i < 9; i++){
+                for(let i = 1; i < 13; i++){
                     const daily = weather.hourly.data[i];
                     const timeString = moment.unix(daily.time).format('LT');
                     
