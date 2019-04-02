@@ -54,12 +54,11 @@ if(navigator.geolocation){
                 setIcons(icon, document.querySelector('.icon'));
 
                 fetch(cityName)
-                    .then((data2) => data2.json())
-                    .then((data3) => {
-                        console.log('hello');
-                        console.log(data3);
+                    .then((whatCity) => whatCity.json())
+                    .then((city) => {
+                        console.log(city);
 
-                        locationTimezone.textContent = data3.name;
+                        locationTimezone.textContent = city.name;
                     });
 
 
