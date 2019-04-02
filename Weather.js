@@ -26,7 +26,6 @@ if(navigator.geolocation){
         const temperatureSection = document.querySelector('.temperature-section');
         const temperatureSpan = document.querySelector('.temperature-section p');
         const hourlytemp = document.querySelector('.hourly-temp');
-        const hourlytime = document.querySelector('.hourly-time');
 
 
         fetch(darkSky)
@@ -39,11 +38,13 @@ if(navigator.geolocation){
                 tempratureDegree.textContent = Math.floor(temperature);
                 tempratureDescription.textContent = summary;
 
-                for(const daily of weather.hourly.data){
+                // for(const daily of weather.hourly.data){
+                for(let i = 1; i < 13; i++){
+                    const daily = weather.hourly.data[i];
                     const timeString = moment.unix(daily.time).format('LT');
                     
-                    console.log(daily);
-                    hourlytemp.innerHTML += `<div class='daily'> <p><h3>${timeString}</h3><h1>${Math.floor(daily.temperature)}</h1></p> </div>`;
+                    // console.log(daily);
+                    hourlytemp.innerHTML += `<div class='daily'> <p><p>${timeString}</p><h1>${Math.floor(daily.temperature)}</h1></p> </div>`;
                 }
 
                 // Get Celsius
