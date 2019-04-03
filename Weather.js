@@ -38,12 +38,12 @@ if(navigator.geolocation){
                 tempratureDegree.textContent = Math.floor(temperature);
                 tempratureDescription.textContent = summary;
 
-                // for(const daily of weather.hourly.data){
+                // Get hourly temperature
                 for(let i = 1; i < 13; i++){
                     const daily = weather.hourly.data[i];
                     const timeString = moment.unix(daily.time).format('LT');
                     
-                    // console.log(daily);
+                    
                     hourlytemp.innerHTML += `<div class='daily'> <p><p>${timeString}</p><h1>${Math.floor(daily.temperature)}</h1></p> </div>`;
                 }
 
