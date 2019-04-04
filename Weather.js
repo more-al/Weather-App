@@ -2,7 +2,7 @@ let longitude;
 let latitude;
 let tempratureDescription = document.querySelector('.temperature-description');
 let tempratureDegree = document.querySelector('.temperature-degree');
-let locationTimezone = document.querySelector('.location-timezone');
+let locationTimezone = document.querySelector('.location-city');
 
 function setIcons(icon, iconID){
     const skycons = new Skycons({ 'color': 'white' });
