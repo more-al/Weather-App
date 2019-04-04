@@ -31,10 +31,6 @@ body {
     align-items: center;
 }
 
-h1.location-city {
-    flex-wrap: wrap;
-}
-
 .temperature {
     flex-direction: column;
 }
